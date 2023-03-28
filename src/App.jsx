@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import MyTitle from './components/MyTitle'
 import PokemonCard from './components/PokemonCard'
+import PropTypes from "prop-types"
 
 const pokemonList = [
   {
@@ -19,7 +20,7 @@ const pokemonList = [
 function App() {
   return (
     <div>
-      <PokemonCard pokemon={pokemonList[1]} />
+      <PokemonCard pokemon={pokemonList[0]} />
     </div>
   );
 }
