@@ -5,7 +5,6 @@ import './App.css'
 import MyTitle from './components/MyTitle'
 import PokemonCard from './components/PokemonCard'
 import NavBar from './components/NavBar'
-import PropTypes from "prop-types"
 
 const pokemonList = [
   {
