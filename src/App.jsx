@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import MyTitle from './components/MyTitle'
 import PokemonCard from './components/PokemonCard'
+import NavBar from './components/NavBar'
 import PropTypes from "prop-types"
 
 const pokemonList = [
@@ -34,21 +35,12 @@ const pokemonList = [
 
 function App() {
 
-  const [pokemonIndex, setPokemonIndex] = useState(1)
-
-  const handlePreviousClick = () => {
-    setPokemonIndex(pokemonIndex - 1)
-  }
-
-  const handleNextClick = () => {
-    setPokemonIndex(pokemonIndex + 1)
-  }
+  const [pokemonIndex, setPokemonIndex] = useState(0)
 
   return (
     <div>
+      <NavBar pokemonIndex={pokemonIndex} setPokemonIndex={setPokemonIndex} pokemonListLength={pokemonList.length} />
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-      {pokemonIndex > 0 ? <button onClick={handlePreviousClick}>Précédent</button> : null}
-      {pokemonIndex < pokemonList.length - 1 ? <button onClick={handleNextClick}>Suivant</button> : null}
     </div>
   );
 }
